@@ -8,7 +8,6 @@ Plugin.create :socket_tweet_server do
     while true
       Thread.start(server.accept) do |client|
         begin                         
-          client.puts(Time.now.ctime)
           #受け取った内容を呟くよ
           Post.primary_service.update(:message => "#{client.gets}")
         rescue IOError
