@@ -16,19 +16,17 @@ sendMessage msg = withSocketsDo $ do
         hClose h
 
 -- isEOFErrorは見なかったことにして終了
-checkEOFOrError :: IOError -> IO [Char]
 checkEOFOrError ex = if isEOFError ex then 
                          return () >> return "send done."
                      else ioError ex >> return "IOerror."
 
 -- 文字数のチェック
 -- TODO:URLの文字数カウント
-checkLengthAndTwit :: [Char] -> IO ()
 checkLengthAndTwit msg
  | 0 == length msg = putStrLn "at least 1 character!" 
  | 140 < length msg = putStrLn "over 140 characters!!"
  | otherwise = sendMessage msg
  
-main = do putStrLn "Input Tweet:"
+main = do putStrLn "Input Tweet"
           msg <- getLine
           checkLengthAndTwit msg
