@@ -5,7 +5,3 @@ HFLAGS=--make -O2
 
 $(TARGET):
 	$(HS) $(HFLAGS) $(SOURCE)
-clean:
-	rm $(TARGET);
-	rm $(TARGET).hi;
-	rm $(TARGET).o;
