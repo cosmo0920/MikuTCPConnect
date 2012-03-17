@@ -1,0 +1,11 @@
+* これなに
+mikutterにTCPSocketサーバーを立ててほげほげします。
+TCPserverの中身をmikutterのpluginに入れてください。
+他はどこに置いても構いません。
+* Windowsのバイナリください
+自分で
+string host = "<target machine LANIP>";
+の値を書き換えてビルドしてください。
+ビルドはVisual C# 2010があれば出来るはずです。
+* 動かないんだけど
+IPが間違っているかもしれません。よく確認してください
