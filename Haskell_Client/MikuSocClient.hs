@@ -15,8 +15,8 @@ sendMessage msg = withSocketsDo $ do
               >>= putStrLn
         hClose h
 
-
-checkLengthAndTwit msg 
+checkLengthAndTwit msg
+ | 0 == length msg = putStrLn "at least 1 character!" 
  | 140 < length msg = putStrLn "over 140 characters!!"
  | otherwise = sendMessage msg
  
