@@ -1,11 +1,12 @@
+#Haskell TCPSocket Client
 HS=ghc
-TARGET=MikuSocClient
-SOURCE=MikuSocClient.hs
-HFLAGS=--make -O2
+TARGETHS=MikuSocClient
+SOURCEHS=MikuSocClient.hs
+HSFLAGS=--make -O2
+HSOBJECT=$(TARGETHS) $(TARGETHS).hi $(TARGETHS).o
 
 $(TARGET):
 	$(HS) $(HFLAGS) $(SOURCE)
+.PHONY: clean
 clean:
-	rm $(TARGET);
-	rm $(TARGET).hi;
-	rm $(TARGET).o;
+	rm $(HSOBJECT)
