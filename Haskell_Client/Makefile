@@ -5,8 +5,8 @@ SOURCEHS=MikuSocClient.hs
 HSFLAGS=--make -O2
 HSOBJECT=$(TARGETHS) $(TARGETHS).hi $(TARGETHS).o
 
-$(TARGET):
-	$(HS) $(HFLAGS) $(SOURCE)
+$(TARGETHS):
+	$(HS) $(HSFLAGS) $(SOURCEHS)
 .PHONY: clean
 clean:
 	rm $(HSOBJECT)
